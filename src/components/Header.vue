@@ -7,7 +7,11 @@
         <li><strong>ASCII AVATAR GENERATOR</strong></li>
       </ul>
       <ul>
-        <li><a href="#" class="contrast">Github</a></li>
+        <li>
+          <a href="#" class="contrast"
+            ><i class="ti ti-brand-github"></i> Github</a
+          >
+        </li>
       </ul>
     </nav>
   </header>

@@ -4,13 +4,7 @@ import ColorButton from "./components/ColorButton.vue";
 import Demos from "./components/Demos.vue";
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
-import Minus from "./components/icons/Minus.vue";
-import Plus from "./components/icons/Plus.vue";
-import Restore from "./components/icons/Restore.vue";
-import Rotate2 from "./components/icons/Rotate2.vue";
-import RotateClockWise from "./components/icons/RotateClockWise.vue";
 import { useHtmlToImage } from "./composables/useHtmlToImage";
-import Download from "./components/icons/Download.vue";
 
 // REFS
 const ascii = ref("=)");
@@ -86,7 +80,7 @@ const descargarImagen = () => {
           <div class="avatar" :style="`background-color: ${color}`">
             <span
               :style="`font-size: ${size}rem; rotate: ${rotation}deg; transform:translate(${transformX}px, ${transformY}px);`"
-              style="transition: all 150ms ease-in-out 50ms"
+              style="transition: all 150ms ease"
               >{{ ascii }}</span
             >
           </div>
@@ -95,11 +89,11 @@ const descargarImagen = () => {
           <div class="grid">
             <button class="secondary outline" role="button" @click="reset">
               Reiniciar
-              <Restore />
+              <i class="ti ti-restore"></i>
             </button>
             <button role="button" @click="descargarImagen()">
               Descargar
-              <Download />
+              <i class="ti ti-download"></i>
             </button>
           </div>
         </footer>
@@ -108,7 +102,7 @@ const descargarImagen = () => {
       <article>
         <header>
           <hgroup>
-            <h2>Personalización</h2>
+            <h2>Personalización </h2>
             <p>Hazlo a tu estilo</p>
           </hgroup>
         </header>
@@ -118,7 +112,7 @@ const descargarImagen = () => {
           <div>
             <!-- ASCII -->
             <label
-              >Ascii face
+              ><i class="ti ti-lego"></i> Emoji ascii
               <input
                 type="text"
                 maxlength="3"
@@ -130,28 +124,30 @@ const descargarImagen = () => {
             <div>
               <div class="grid" style="margin-bottom: 0.75rem">
                 <!-- FONT SIZE -->
-                <button @click="add" :disabled="size >= 10"><Plus /></button>
+                <button @click="add" :disabled="size >= 10">
+                  <i class="ti ti-plus"></i>
+                </button>
                 <button @click="subtract" :disabled="size <= 5">
-                  <Minus />
+                  <i class="ti ti-minus"></i>
                 </button>
               </div>
               <div class="grid">
                 <!-- ROTATION -->
-                <button
-                  @click="rotateClockWise"
-                  class="secondary"
-                  aria-label="rotar sentido horario"
-                  :disabled="rotation >= 360"
-                >
-                  <RotateClockWise />
-                </button>
                 <button
                   @click="rotateAntiClockWise"
                   class="secondary"
                   aria-label="rotar sentido antihorario"
                   :disabled="rotation <= 0"
                 >
-                  <Rotate2 />
+                  <i class="ti ti-rotate-2"></i>
+                </button>
+                <button
+                  @click="rotateClockWise"
+                  class="secondary"
+                  aria-label="rotar sentido horario"
+                  :disabled="rotation >= 360"
+                >
+                  <i class="ti ti-rotate-clockwise-2"></i>
                 </button>
               </div>
             </div>
@@ -161,39 +157,71 @@ const descargarImagen = () => {
             <!-- COLOR -->
             <div>
               <div>
-                <p>Presets</p>
+                <p><i class="ti ti-palette"></i> Colores</p>
                 <div class="grid div_colores">
-                  <ColorButton color="fcc602" @click="setColor('#fcc602')" />
-                  <ColorButton color="fa944e" @click="setColor('#fa944e')" />
-                  <ColorButton color="ff6662" @click="setColor('#ff6662')" />
-                  <ColorButton color="ff90ee" @click="setColor('#ff90ee')" />
+                  <ColorButton
+                    color="fcc602"
+                    @click="setColor('#fcc602')"
+                    data-tooltip="Amarillo Oro"
+                  />
+                  <ColorButton
+                    color="fa944e"
+                    @click="setColor('#fa944e')"
+                    data-tooltip="Naranja"
+                  />
+                  <ColorButton
+                    color="ff6662"
+                    @click="setColor('#ff6662')"
+                    data-tooltip="Rojo"
+                  />
+                  <ColorButton
+                    color="ff90ee"
+                    @click="setColor('#ff90ee')"
+                    data-tooltip="Rosa"
+                  />
                 </div>
                 <div class="grid div_colores">
-                  <ColorButton color="4ca9fd" @click="setColor('#4ca9fd')" />
-                  <ColorButton color="8ff2d7" @click="setColor('#8ff2d7')" />
-                  <ColorButton color="9be43a" @click="setColor('#9be43a')" />
-                  <ColorButton color="ad8fff" @click="setColor('#ad8fff')" />
+                  <ColorButton
+                    color="4ca9fd"
+                    @click="setColor('#4ca9fd')"
+                    data-tooltip="Azul"
+                  />
+                  <ColorButton
+                    color="8ff2d7"
+                    @click="setColor('#8ff2d7')"
+                    data-tooltip="Verde azulado"
+                  />
+                  <ColorButton
+                    color="9be43a"
+                    @click="setColor('#9be43a')"
+                    data-tooltip="Verde"
+                  />
+                  <ColorButton
+                    color="ad8fff"
+                    @click="setColor('#ad8fff')"
+                    data-tooltip="Morado"
+                  />
                 </div>
               </div>
               <label @click="mostarColor">
-                Custom color
+                <i class="ti ti-color-picker"></i>
+                Color personalizado 
                 <input type="color" v-model="color" />
               </label>
             </div>
-
-            <!-- CUSTOM COLOR -->
           </div>
         </div>
-
         <hr />
         <div class="grid">
           <div>
             <label
-              >Eje X: <span class="mono">{{ transformX }}</span>
+              ><i class="ti ti-axis-x"></i>
+              <span class="mono">X: {{ transformX }}</span>
               <input type="range" max="50" min="-50" v-model="transformX" />
             </label>
-            <label
-              >Eje Y: <span class="mono">{{ transformY }}</span>
+            <label>
+              <i class="ti ti-axis-y"></i>
+              <span class="mono">Y: {{ transformY }}</span>
               <input type="range" max="50" min="-50" v-model="transformY" />
             </label>
           </div>
