@@ -1,0 +1,30 @@
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 399.7552490234374 356.67346692942124"
+     width="399.7552490234374"
+     height="356.67346692942124">
+    <g>
+        <text x="0"
+              y="235"
+              font-family="Virgil, Segoe UI Emoji"
+              font-size="269.33877354353694px"
+              font-weight="900"
+              text-anchor="start"
+              style="white-space: pre;"
+              direction="ltr"
+              dominant-baseline="alphabetic">u.u</text>
+    </g>
+    <style>
+        <style>            
+            text{
+            fill: black
+            }
+            
+            @media (prefers-color-scheme:dark){
+            text{
+            fill: Snow
+            }
+            }
+        </style>
+    </style>
+</svg>
