@@ -8,7 +8,7 @@
       </ul>
       <ul>
         <li>
-          <a href="#" class="contrast"
+          <a href="https://github.com/samueleitorme/ascii-avatar-generator" target="_blank" class="contrast"
             ><i class="ti ti-brand-github"></i> Github</a
           >
         </li>
