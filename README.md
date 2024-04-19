@@ -1,29 +1,23 @@
-# ascii-avatar-generator
+<h1 style="text-align:center">Generador de Avatares ASCII</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+<img src="./ascii-avatar-gen-cover.jpg" alt="Imagen portada del repositorio">
 
-## Recommended IDE Setup
+Crea tus propios avatares con caracteres ASCII.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Me he inspirado en el personalizador de personajes del videojuego *Content Warning*.
 
-## Customize configuration
+## Características
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Interfaz sencilla e intuitiva.
+- Controles para una mejor personalización.
+- Exportación a png.
 
-## Project Setup
+## Instalación para desarrollo
 
-```sh
-npm install
-```
+1. Clonar el repositorio
+2. Abir visual studio code
+3. `npm install` o `pnpm install`
 
-### Compile and Hot-Reload for Development
+## Licencia
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Este proyecto está bajo la licencia MIT.
